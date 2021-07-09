@@ -8,7 +8,7 @@ args:
       long: config
       value_name: FILE
       about: Provide custom configuration in a separate file
-      takes_value: true
+      default_value: chimp_config.yml
 subcommands:
   - code:
       about: Manage code changes
@@ -20,3 +20,11 @@ subcommands:
             long: checkout
             about: Change branch to an existing or new branch
             takes_value: true
+  - issue:
+      about: Manage issues or tickets
+      author: Burton Rheutan
+      args:
+        - list:
+            short: l
+            long: list
+            about: List all the active issues

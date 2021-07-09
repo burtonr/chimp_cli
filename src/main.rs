@@ -5,7 +5,8 @@ fn main() {
     let yaml = load_yaml!("chimp.yml");
     let matches = App::from(yaml).get_matches();
 
-    if let Some(config) = matches.value_of("config") {
+    if matches.occurrences_of("config") != 0 {
+        let config = matches.value_of("config").unwrap();
         println!("Found custom config: {}", config);
     } 
 
@@ -13,6 +14,10 @@ fn main() {
         Some(("code", code_cmd)) => {
             println!("Running code stuff");
             code_handler(code_cmd);
+        },
+        Some(("issue", issue_cmd)) => {
+            println!("Running issue stuff");
+            issue_handler(issue_cmd);
         },
         _ => println!("Unknown command"),
     }
@@ -27,4 +32,8 @@ fn code_handler(args: &clap::ArgMatches) {
     }
 
     println!("Done handling the code command...");
+}
+
+fn issue_handler(_args: &clap::ArgMatches) {
+    println!("Doing issue stuff");
 }
