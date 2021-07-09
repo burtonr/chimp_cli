@@ -1,0 +1,22 @@
+name: chimp
+version: "0.1"
+author: Burton Rheutan
+about: A smaller APE for trying things out
+args:
+  - config:
+      short: c
+      long: config
+      value_name: FILE
+      about: Provide custom configuration in a separate file
+      takes_value: true
+subcommands:
+  - code:
+      about: Manage code changes
+      version: "1.0"
+      author: Burton Rheutan
+      args:
+        - checkout:
+            short: c
+            long: checkout
+            about: Change branch to an existing or new branch
+            takes_value: true
