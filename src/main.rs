@@ -1,5 +1,7 @@
 use clap::{ App, load_yaml };
 
+use chimp_cli::CodeTraits;
+
 fn main() {
     println!("Hello, world!");
     let yaml = load_yaml!("chimp.yml");
@@ -25,9 +27,14 @@ fn main() {
 
 fn code_handler(args: &clap::ArgMatches) {
     // let checkoutVal = args.value_of("checkout");
+    let github = chimp_cli::code::GitHub{ owner: String::from("burtonr") };
 
     match args.value_of("checkout") {
-        Some(b) => println!("Checking out: {}", b),
+        Some(b) => {
+            println!("Checking out: {}", b);
+            let msg = github.clone();
+            println!("{}", msg);
+        },
         None => println!("nothing to checkout"),
     }
 
