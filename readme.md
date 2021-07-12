@@ -9,6 +9,17 @@ I expect this to change drastically with no real rhyme or reason.
 
 ## Use
 
+Using Cargo "features" to modify the included functionality.
+
+```shell
+cargo build --features code,issue
+```
+
+The thought here is that on the final project, a "coose your own binary" type tool will include the features the specific user wants.
+
+> ex: "Code" feature with "github" support + "Issue" feature with "jira" support... etc
+
+
 In a separate crate, implement the defined trait(s) as follows:
 
 ```rust

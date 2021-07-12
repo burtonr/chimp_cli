@@ -11,6 +11,7 @@ fn main() {
     } 
 
     match matches.subcommand() {
+        #[cfg(feature = "code")]
         Some(("code", code_cmd)) => {
             println!("Running code stuff");
             code_handler(code_cmd);
@@ -23,6 +24,7 @@ fn main() {
     }
 }
 
+#[cfg(feature = "code")]
 fn code_handler(args: &clap::ArgMatches) {
     // let checkoutVal = args.value_of("checkout");
 
