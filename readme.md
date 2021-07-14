@@ -35,3 +35,10 @@ impl SCM for GitLab {
   }
 }
 ```
+
+## TODO
+Thinking that the features could be used to define what commands are available, but dynamic libraries will contain the various implementations of those commands. 
+
+This will allow multiple providers to be developed independently, and swapped out at runtime with a config change (or even a CLI flag/param)
+
+Read more [Plugins in Rust by Michael-F-Bryan](https://adventures.michaelfbryan.com/posts/plugins-in-rust/)
